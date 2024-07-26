@@ -1,5 +1,8 @@
 // ignore_for_file: file_names
 
+import 'package:collegehub/college-items.dart';
+import 'package:collegehub/college-model-sheet.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -10,7 +13,22 @@ class HomeTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          showModalBottomSheet(
+            context: context,
+            isScrollControlled: true,
+            builder: (context) {
+              return Padding(
+                padding: EdgeInsets.only(
+                    bottom: MediaQuery.of(context).viewInsets.bottom),
+                child: CollegeModelSheet(),
+              );
+            },
+          );
+        },
+        backgroundColor: Color(0xff264653),
+        child: Icon(Icons.add),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
       ),
       backgroundColor: Colors.transparent,
       body: Column(
@@ -19,8 +37,9 @@ class HomeTab extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Image.asset(
-              "assets/images/university.png",
+              "assets/images/school.png",
               height: MediaQuery.of(context).size.width * 0.4,
+              fit: BoxFit.contain,
             ),
           ),
           Expanded(
@@ -28,36 +47,40 @@ class HomeTab extends StatelessWidget {
               padding: const EdgeInsets.all(10.0),
               child: Card(
                 elevation: 10,
-                shadowColor: Color(0xff780000),
-                color: Color(0xff669bbc),
+                shadowColor: const Color(0xff780000),
+                color: const Color(0xff264653).withOpacity(.5),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
                 child: Container(
+                  padding: const EdgeInsets.all(15.0),
                   child: Column(
                     children: [
-                      Divider(
-                        color: Color(0xff003049),
-                        thickness: 3,
-                      ),
-                      Text(
-                        "My colleges",
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.playfairDisplay(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
+                      Container(
+                        height: 50,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(color: Colors.black54, width: 2),
+                        ),
+                        alignment: Alignment.center,
+                        child: Text(
+                          "hometap".tr(),
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.playfairDisplay(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black87,
+                          ),
                         ),
                       ),
-                      Divider(
-                        color: Color(0xff003049),
-                        thickness: 3,
-                      ),
+                      const SizedBox(
+                          height:
+                              10), // Add some spacing between the title and the list
                       Expanded(
                         child: ListView.builder(
                           itemBuilder: (context, index) {
-                            return ListTile(
-                              leading: Icon(Icons.school),
-                              title: Text("College ${index + 1}"),
-                              onTap: () {},
-                            );
+                            return const CollegeItems(); // Ensure that CollegeItems is returned properly
                           },
                           itemCount: 20,
                         ),

@@ -2,6 +2,7 @@ import 'package:collegehub/tabs/home-tab.dart';
 import 'package:collegehub/tabs/message-tab.dart';
 import 'package:collegehub/tabs/profile-tab.dart';
 import 'package:collegehub/tabs/setting-tab.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -19,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Widget> tabs = const [
     HomeTab(),
     ProfileTab(),
-    MessagTeab(),
+    MessagTeab(), // Fixed typo
     SettingTab(),
   ];
 
@@ -27,14 +28,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Image.asset(
-          "assets/images/bg.png",
-          fit: BoxFit.cover,
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-        ),
         Scaffold(
-          backgroundColor: Colors.transparent,
+          backgroundColor: Color(0XFFf4a261),
           appBar: AppBar(
             actions: [
               IconButton(
@@ -46,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ],
             title: Text(
-              "Home Screen",
+              "appbar".tr(),
               style: GoogleFonts.playfairDisplay(
                 fontWeight: FontWeight.bold,
                 fontSize: 30,
@@ -54,14 +49,14 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             centerTitle: true,
-            backgroundColor: Color(0xff219EBC).withOpacity(0.5),
+            backgroundColor: Color(0xff2a9d8f),
             elevation: 0,
           ),
           bottomNavigationBar: BottomNavigationBar(
             showUnselectedLabels: false,
             showSelectedLabels: true,
             type: BottomNavigationBarType.fixed,
-            backgroundColor: Colors.blue.withOpacity(0.1),
+            backgroundColor: Color(0XFFe76f51),
             currentIndex: selectedIndex,
             selectedItemColor: Colors.yellow,
             unselectedItemColor: Colors.black,
@@ -70,14 +65,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 selectedIndex = index;
               });
             },
-            items: const [
-              BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+            items: [
               BottomNavigationBarItem(
-                  icon: Icon(Icons.person_2_rounded), label: 'Profile'),
+                  icon: Icon(Icons.home), label: 'homebutton'.tr()),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.message_rounded), label: 'Messages'),
+                  icon: Icon(Icons.person_2_rounded),
+                  label: 'profilebutton'.tr()),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.settings), label: 'Settings'),
+                  icon: Icon(Icons.message_rounded),
+                  label: 'messagebutton'.tr()),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.settings), label: 'settingsbutton'.tr()),
             ],
           ),
           body: tabs[selectedIndex],

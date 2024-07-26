@@ -1,0 +1,25 @@
+{
+    "appbar":"College Hub",
+    "hometap":"Colleges",
+    "homebutton":"Home",
+    "profilebutton":"Profile",
+    "messagebutton":"Message",
+    "settingsbutton":"Settings",
+    "usernamef":"First Name",
+    "heinttext":"Enter the name",
+    "governoratehint":"Enter your governorate",
+    "emailhint":"Enter your email",
+    "phonhint":"Enter phone number",
+    "cityhint":"Enter your city",
+    "usernamel":"Last Name",
+    "email":"Email",
+    "uname":"University Name",
+    "phone":"Phine",
+    "message":"Messages",
+    "language":"Language",
+    "arabic":"Arabic",
+    "english": "English",
+    "governorate":"Governorate",
+    "city":"City"
+
+}
