@@ -1,7 +1,7 @@
 // ignore_for_file: file_names
 
-import 'package:collegehub/college-items.dart';
-import 'package:collegehub/college-model-sheet.dart';
+import 'package:collegehub/items/college-items.dart';
+import 'package:collegehub/model-sheets/college-model-sheet.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -65,7 +65,7 @@ class HomeTab extends StatelessWidget {
                         ),
                         alignment: Alignment.center,
                         child: Text(
-                          "hometap".tr(),
+                          "home-tap".tr(),
                           textAlign: TextAlign.center,
                           style: GoogleFonts.playfairDisplay(
                             fontSize: 30,

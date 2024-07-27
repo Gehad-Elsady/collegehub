@@ -20,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Widget> tabs = const [
     HomeTab(),
     ProfileTab(),
-    MessagTeab(), // Fixed typo
+    MessageTab(), // Fixed typo
     SettingTab(),
   ];
 
@@ -41,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ],
             title: Text(
-              "appbar".tr(),
+              "app-bar".tr(),
               style: GoogleFonts.playfairDisplay(
                 fontWeight: FontWeight.bold,
                 fontSize: 30,
@@ -67,15 +67,15 @@ class _HomeScreenState extends State<HomeScreen> {
             },
             items: [
               BottomNavigationBarItem(
-                  icon: Icon(Icons.home), label: 'homebutton'.tr()),
+                  icon: Icon(Icons.home), label: 'home-button'.tr()),
               BottomNavigationBarItem(
                   icon: Icon(Icons.person_2_rounded),
-                  label: 'profilebutton'.tr()),
+                  label: 'profile-button'.tr()),
               BottomNavigationBarItem(
                   icon: Icon(Icons.message_rounded),
-                  label: 'messagebutton'.tr()),
+                  label: 'message-button'.tr()),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.settings), label: 'settingsbutton'.tr()),
+                  icon: Icon(Icons.settings), label: 'settings-button'.tr()),
             ],
           ),
           body: tabs[selectedIndex],

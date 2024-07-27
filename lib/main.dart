@@ -1,4 +1,6 @@
-import 'package:collegehub/home-screen.dart';
+import 'package:collegehub/screens/college-screen.dart';
+import 'package:collegehub/screens/home-screen.dart';
+import 'package:collegehub/screens/message-screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
@@ -29,7 +31,9 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         initialRoute: HomeScreen.routeName,
         routes: {
-          HomeScreen.routeName: (context) => HomeScreen(),
+          HomeScreen.routeName: (context) => const HomeScreen(),
+          CollegeScreen.routeName: (context) => const CollegeScreen(),
+          MessageScreen.routeName: (context) => const MessageScreen(),
         });
   }
 }

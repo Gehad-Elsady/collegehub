@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class CollegeModelSheet extends StatelessWidget {
@@ -24,8 +25,8 @@ class CollegeModelSheet extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: TextField(
                 decoration: InputDecoration(
-                  labelText: 'University Name',
-                  hintText: 'Enter the name',
+                  labelText: 'uname'.tr(),
+                  hintText: 'hint-text'.tr(),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -44,8 +45,8 @@ class CollegeModelSheet extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: TextField(
                       decoration: InputDecoration(
-                        labelText: 'Governorate',
-                        hintText: 'Enter your governorate',
+                        labelText: 'governorate'.tr(),
+                        hintText: 'governorate-hint'.tr(),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -62,8 +63,8 @@ class CollegeModelSheet extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: TextField(
                       decoration: InputDecoration(
-                        hintText: 'Enter your city',
-                        labelText: 'City',
+                        hintText: 'city-hint'.tr(),
+                        labelText: 'city'.tr(),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -86,11 +87,11 @@ class CollegeModelSheet extends StatelessWidget {
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                         suffixIcon: Icon(
-                          Icons.abc,
+                          Icons.format_list_numbered,
                           size: 30,
                         ),
-                        labelText: 'Number of years',
-                        hintText: 'Enter years number',
+                        labelText: 'num-years'.tr(),
+                        hintText: 'num-years-hint'.tr(),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -105,11 +106,11 @@ class CollegeModelSheet extends StatelessWidget {
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                         suffixIcon: Icon(
-                          Icons.abc,
+                          Icons.monetization_on_rounded,
                           size: 30,
                         ),
-                        labelText: 'Semester cost',
-                        hintText: 'Enter the cost',
+                        labelText: 'semester'.tr(),
+                        hintText: 'semester-hint'.tr(),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -128,11 +129,11 @@ class CollegeModelSheet extends StatelessWidget {
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                         suffixIcon: Icon(
-                          Icons.abc,
+                          Icons.percent,
                           size: 30,
                         ),
-                        labelText: 'Minimum acceptance',
-                        hintText: 'Enter the rate',
+                        labelText: 'acceptance'.tr(),
+                        hintText: 'rate'.tr(),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -150,8 +151,8 @@ class CollegeModelSheet extends StatelessWidget {
                           Icons.abc,
                           size: 30,
                         ),
-                        labelText: 'The Division',
-                        hintText: 'Enter the division',
+                        labelText: 'division'.tr(),
+                        hintText: 'division-hint'.tr(),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -166,11 +167,11 @@ class CollegeModelSheet extends StatelessWidget {
               child: TextField(
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
-                  labelText: 'Email',
+                  labelText: 'email'.tr(),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  hintText: 'Enter your email',
+                  hintText: 'email-hint'.tr(),
                   suffixIcon: Icon(
                     Icons.mail,
                     size: 30,
@@ -183,8 +184,8 @@ class CollegeModelSheet extends StatelessWidget {
               child: TextField(
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  labelText: 'Phone Number',
-                  hintText: 'Enter phone number',
+                  labelText: 'phone'.tr(),
+                  hintText: 'phon-hint'.tr(),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -201,14 +202,13 @@ class CollegeModelSheet extends StatelessWidget {
               child: TextField(
                 keyboardType: TextInputType.text,
                 decoration: InputDecoration(
-                  labelText: 'About',
-                  hintText:
-                      'Enter data about the college major and programs and the life after graduation',
+                  labelText: 'about'.tr(),
+                  hintText: 'about-hint'.tr(),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
                   suffixIcon: Icon(
-                    Icons.phone_android_rounded,
+                    Icons.abc_outlined,
                     size: 30,
                     color: Colors.blue,
                   ),
@@ -232,7 +232,7 @@ class CollegeModelSheet extends StatelessWidget {
                           padding: EdgeInsets.symmetric(vertical: 15),
                         ),
                         child: Text(
-                          'Save',
+                          'save'.tr(),
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,

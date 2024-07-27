@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1048274938112",
+    "project_id": "college-hub-b4edf",
+    "storage_bucket": "college-hub-b4edf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1048274938112:android:a05dbe8345a47391e0abe5",
+        "android_client_info": {
+          "package_name": "com.example.collegehub"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGzji25NHQIHUBp2TJcSuyfgx7y6-yzCY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

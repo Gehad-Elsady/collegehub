@@ -21,7 +21,7 @@ class ProfileTab extends StatelessWidget {
               height: 30,
             ),
             Text(
-              "Username",
+              "User-name",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             SizedBox(
@@ -38,8 +38,8 @@ class ProfileTab extends StatelessWidget {
                           Icons.abc,
                           size: 30,
                         ),
-                        labelText: 'usernamef'.tr(),
-                        hintText: 'heinttext'.tr(),
+                        labelText: 'user-name-f'.tr(),
+                        hintText: 'hint-text'.tr(),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -56,8 +56,8 @@ class ProfileTab extends StatelessWidget {
                           Icons.abc,
                           size: 30,
                         ),
-                        labelText: 'usernamel'.tr(),
-                        hintText: 'heinttext'.tr(),
+                        labelText: 'user-name-l'.tr(),
+                        hintText: 'hint-text'.tr(),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -76,7 +76,7 @@ class ProfileTab extends StatelessWidget {
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  hintText: 'emailhint'.tr(),
+                  hintText: 'email-hint'.tr(),
                   suffixIcon: Icon(
                     Icons.mail,
                     size: 30,
@@ -92,7 +92,7 @@ class ProfileTab extends StatelessWidget {
                     child: TextField(
                       decoration: InputDecoration(
                         labelText: 'governorate'.tr(),
-                        hintText: 'governoratehint'.tr(),
+                        hintText: 'governorate-hint'.tr(),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -109,7 +109,7 @@ class ProfileTab extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: TextField(
                       decoration: InputDecoration(
-                        hintText: 'cityhint'.tr(),
+                        hintText: 'city-hint'.tr(),
                         labelText: 'city'.tr(),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
@@ -129,7 +129,7 @@ class ProfileTab extends StatelessWidget {
               child: TextField(
                 decoration: InputDecoration(
                   labelText: 'uname'.tr(),
-                  hintText: 'heinttext'.tr(),
+                  hintText: 'hint-text'.tr(),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -147,7 +147,7 @@ class ProfileTab extends StatelessWidget {
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                   labelText: 'phone'.tr(),
-                  hintText: 'phonhint'.tr(),
+                  hintText: 'phon-hint'.tr(),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -176,7 +176,7 @@ class ProfileTab extends StatelessWidget {
                           padding: EdgeInsets.symmetric(vertical: 15),
                         ),
                         child: Text(
-                          'Save',
+                          'save'.tr(),
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -202,7 +202,7 @@ class ProfileTab extends StatelessWidget {
                           padding: EdgeInsets.symmetric(vertical: 15),
                         ),
                         child: Text(
-                          'Update',
+                          'update'.tr(),
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
