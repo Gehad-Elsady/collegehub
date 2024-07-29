@@ -20,7 +20,7 @@ class LanguageBottomSheet extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            "select_language",
+            "select-language".tr(),
             style: Theme.of(context)
                 .textTheme
                 .headlineLarge
@@ -37,7 +37,7 @@ class LanguageBottomSheet extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "english",
+                  "english".tr(),
                   style: Theme.of(context)
                       .textTheme
                       .bodyMedium
@@ -62,7 +62,7 @@ class LanguageBottomSheet extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("arabic",
+                Text("arabic".tr(),
                     style: Theme.of(context)
                         .textTheme
                         .bodyMedium

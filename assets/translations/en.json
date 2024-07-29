@@ -32,6 +32,20 @@
     "about":"About",
     "about-hint":"Enter data about the college major and programs and the life after graduation",
     "save":"Save",
-    "update":"Update"
+    "update":"Update",
+    "password":"Password",
+    "sign-in":"Sign in",
+    "not-m":"Not a member?",
+    "register-now":"Register now",
+    "login-title":"Welcome to College Hub",
+    "c-password":"Confirm password",
+    "sign-up":"Sign up",
+    "sign-up-title":"Let's create a new account for you",
+    "have-account":"already have an account?  ",
+    "login-now":"Login now",
+    "password-error":"Passwords do not match",
+    "error-pass":"Incorrect password",
+    "error-login":"Incorrect password or email",
+    "select-language":"Select Language"
 
 }

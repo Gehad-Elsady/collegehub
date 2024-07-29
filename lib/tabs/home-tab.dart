@@ -37,7 +37,7 @@ class HomeTab extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Image.asset(
-              "assets/images/school.png",
+              "assets/images/school-w.png",
               height: MediaQuery.of(context).size.width * 0.4,
               fit: BoxFit.contain,
             ),

@@ -1,3 +1,4 @@
+import 'package:collegehub/Auth/auth-fire/auth_services.dart';
 import 'package:collegehub/tabs/home-tab.dart';
 import 'package:collegehub/tabs/message-tab.dart';
 import 'package:collegehub/tabs/profile-tab.dart';
@@ -29,13 +30,20 @@ class _HomeScreenState extends State<HomeScreen> {
     return Stack(
       children: [
         Scaffold(
-          backgroundColor: Color(0XFFf4a261),
+          backgroundColor: Color(0XFF8ecae6),
           appBar: AppBar(
+            leading: IconButton(
+                onPressed: () => AuthServices().signout(),
+                icon: Icon(
+                  Icons.logout_outlined,
+                  color: Colors.white,
+                )),
             actions: [
               IconButton(
                 icon: const Icon(
                   Icons.notifications,
                   size: 30,
+                  color: Colors.white,
                 ),
                 onPressed: () {},
               ),
@@ -45,18 +53,18 @@ class _HomeScreenState extends State<HomeScreen> {
               style: GoogleFonts.playfairDisplay(
                 fontWeight: FontWeight.bold,
                 fontSize: 30,
-                color: Colors.black,
+                color: Colors.white,
               ),
             ),
             centerTitle: true,
-            backgroundColor: Color(0xff2a9d8f),
+            backgroundColor: Color(0xff023047),
             elevation: 0,
           ),
           bottomNavigationBar: BottomNavigationBar(
             showUnselectedLabels: false,
             showSelectedLabels: true,
             type: BottomNavigationBarType.fixed,
-            backgroundColor: Color(0XFFe76f51),
+            backgroundColor: Color(0XFF219ebc),
             currentIndex: selectedIndex,
             selectedItemColor: Colors.yellow,
             unselectedItemColor: Colors.black,
