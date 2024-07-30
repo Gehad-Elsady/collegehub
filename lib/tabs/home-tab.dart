@@ -26,18 +26,16 @@ class HomeTab extends StatelessWidget {
             },
           );
         },
-        backgroundColor: Color(0xff264653),
         child: Icon(Icons.add),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
       ),
-      backgroundColor: Colors.transparent,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Image.asset(
-              "assets/images/school-w.png",
+              "assets/images/school.png",
               height: MediaQuery.of(context).size.width * 0.4,
               fit: BoxFit.contain,
             ),
@@ -47,8 +45,6 @@ class HomeTab extends StatelessWidget {
               padding: const EdgeInsets.all(10.0),
               child: Card(
                 elevation: 10,
-                shadowColor: const Color(0xff780000),
-                color: const Color(0xff264653).withOpacity(.5),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),
@@ -67,11 +63,7 @@ class HomeTab extends StatelessWidget {
                         child: Text(
                           "home-tap".tr(),
                           textAlign: TextAlign.center,
-                          style: GoogleFonts.playfairDisplay(
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black87,
-                          ),
+                          style: Theme.of(context).textTheme.bodyMedium,
                         ),
                       ),
                       const SizedBox(

@@ -40,13 +40,14 @@ class LanguageBottomSheet extends StatelessWidget {
                   "english".tr(),
                   style: Theme.of(context)
                       .textTheme
-                      .bodyMedium
+                      .headlineMedium
                       ?.copyWith(color: Colors.black),
                 ),
                 currentLocale == Locale('en')
                     ? Icon(
                         Icons.done,
                         size: 35,
+                        color: Colors.black,
                       )
                     : SizedBox()
               ],
@@ -65,12 +66,13 @@ class LanguageBottomSheet extends StatelessWidget {
                 Text("arabic".tr(),
                     style: Theme.of(context)
                         .textTheme
-                        .bodyMedium
+                        .headlineMedium
                         ?.copyWith(color: Colors.black)),
                 currentLocale != Locale('en')
                     ? Icon(
                         Icons.done,
                         size: 35,
+                        color: Colors.black,
                       )
                     : SizedBox()
               ],

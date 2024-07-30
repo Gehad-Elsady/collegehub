@@ -48,23 +48,28 @@ class MessageItems extends StatelessWidget {
                   children: [
                     Text(
                       'John Doe',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: Theme.of(context)
+                          .textTheme
+                          .headlineLarge
+                          ?.copyWith(color: Colors.black),
                     ),
                     SizedBox(height: 5),
                     Text(
                       'Hello, this is a message.',
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
+                      style: Theme.of(context)
+                          .textTheme
+                          .headlineMedium
+                          ?.copyWith(color: Colors.black),
                     ),
                     SizedBox(height: 5),
                     Text(
                       '10:30 AM',
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: Colors.grey,
-                      ),
+                      style: Theme.of(context)
+                          .textTheme
+                          .headlineSmall
+                          ?.copyWith(color: Colors.black),
                     ),
                   ],
                 ),

@@ -18,7 +18,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int selectedIndex = 0;
 
-  List<Widget> tabs = const [
+  List<Widget> tabs = [
     HomeTab(),
     ProfileTab(),
     MessageTab(), // Fixed typo
@@ -30,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Stack(
       children: [
         Scaffold(
-          backgroundColor: Color(0XFF8ecae6),
+          backgroundColor: Color(0XFFADB5BD),
           appBar: AppBar(
             leading: IconButton(
                 onPressed: () => AuthServices().signout(),
@@ -50,24 +50,10 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
             title: Text(
               "app-bar".tr(),
-              style: GoogleFonts.playfairDisplay(
-                fontWeight: FontWeight.bold,
-                fontSize: 30,
-                color: Colors.white,
-              ),
             ),
-            centerTitle: true,
-            backgroundColor: Color(0xff023047),
-            elevation: 0,
           ),
           bottomNavigationBar: BottomNavigationBar(
-            showUnselectedLabels: false,
-            showSelectedLabels: true,
-            type: BottomNavigationBarType.fixed,
-            backgroundColor: Color(0XFF219ebc),
             currentIndex: selectedIndex,
-            selectedItemColor: Colors.yellow,
-            unselectedItemColor: Colors.black,
             onTap: (index) {
               setState(() {
                 selectedIndex = index;

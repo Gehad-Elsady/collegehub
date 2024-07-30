@@ -1,11 +1,14 @@
 import 'package:collegehub/Auth/auth-fire/auth-gete.dart';
 import 'package:collegehub/firebase_options.dart';
+import 'package:collegehub/providers/userprofile_provider.dart';
 import 'package:collegehub/screens/college-screen.dart';
 import 'package:collegehub/screens/home-screen.dart';
 import 'package:collegehub/screens/message-screen.dart';
+import 'package:collegehub/theme/AppTheming.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,7 +25,9 @@ void main() async {
       path: 'assets/translations',
       saveLocale: true,
       startLocale: const Locale("en"),
-      child: const MyApp()));
+      child: MultiProvider(providers: [
+        ChangeNotifierProvider(create: (_) => UserProfileProvider()),
+      ], child: const MyApp())));
 }
 
 class MyApp extends StatelessWidget {
@@ -36,6 +41,9 @@ class MyApp extends StatelessWidget {
         supportedLocales: context.supportedLocales,
         locale: context.locale,
         debugShowCheckedModeBanner: false,
+        themeMode: ThemeMode.light,
+        theme: AppTheming.LightTheme,
+        darkTheme: AppTheming.DarckTheme,
         initialRoute: AuthGete.routName,
         routes: {
           HomeScreen.routeName: (context) => const HomeScreen(),

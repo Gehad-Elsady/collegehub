@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+
 import 'package:collegehub/screens/college-screen.dart';
 import 'package:flutter/material.dart';
 
@@ -13,11 +15,11 @@ class CollegeItems extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
-          decoration: BoxDecoration(
-            color: Color(0xffe9c46a),
+          decoration: const BoxDecoration(
+            color: Color(0xff495057),
             borderRadius: BorderRadius.all(Radius.circular(10)),
           ),
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -28,11 +30,8 @@ class CollegeItems extends StatelessWidget {
                     width: 15,
                   ),
                   Text(
-                    'College Nmae',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    'College Name',
+                    style: Theme.of(context).textTheme.headlineLarge,
                   ),
                 ],
               ),
@@ -42,21 +41,21 @@ class CollegeItems extends StatelessWidget {
               Text(
                 textAlign: TextAlign.start,
                 'Location: City, State',
-                style: TextStyle(fontSize: 18),
+                style: Theme.of(context).textTheme.headlineMedium,
               ),
               SizedBox(
                 height: 20,
               ),
               Text(
                 'Course: Computer Science',
-                style: TextStyle(fontSize: 18),
+                style: Theme.of(context).textTheme.headlineMedium,
               ),
               SizedBox(
                 height: 20,
               ),
               Text(
                 'Contact Information: Phone Number, Email',
-                style: TextStyle(fontSize: 18),
+                style: Theme.of(context).textTheme.headlineSmall,
               ),
               SizedBox(
                 height: 20,

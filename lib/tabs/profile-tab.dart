@@ -1,11 +1,65 @@
+import 'package:collegehub/providers/userprofile_provider.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class ProfileTab extends StatelessWidget {
-  const ProfileTab({super.key});
+class ProfileTab extends StatefulWidget {
+  ProfileTab({super.key});
+
+  @override
+  State<ProfileTab> createState() => _ProfileTabState();
+}
+
+class _ProfileTabState extends State<ProfileTab> {
+  final TextEditingController firstNameController = TextEditingController();
+  final TextEditingController lastNameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController governorateController = TextEditingController();
+  final TextEditingController cityController = TextEditingController();
+  final TextEditingController universityController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
+  String? userName;
+
+  @override
+  void initState() {
+    super.initState();
+    final userProvider =
+        Provider.of<UserProfileProvider>(context, listen: false);
+    userProvider.fetchCurrentUser().then((_) {
+      userProvider.fetchUserData().then((_) {
+        final user = userProvider.user;
+        if (user != null) {
+          userName = user.firstName;
+        }
+      });
+    });
+  }
+
+  Future<void> _saveUserData() async {
+    final userProvider =
+        Provider.of<UserProfileProvider>(context, listen: false);
+    try {
+      await userProvider.saveUserData(
+        firstName: firstNameController.text,
+        lastName: lastNameController.text,
+        governorate: governorateController.text,
+        city: cityController.text,
+        university: universityController.text,
+        phone: phoneController.text,
+      );
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Data saved successfully!')));
+    } catch (e) {
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text(e.toString())));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
+    final userProvider = Provider.of<UserProfileProvider>(context);
+    final user = userProvider.user;
+
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: SingleChildScrollView(
@@ -17,14 +71,17 @@ class ProfileTab extends StatelessWidget {
               backgroundImage: AssetImage(
                   "assets/images/yuji-itadori-in-action-blue-desktop-wallpaper.jpg"),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Text(
-              "User-name",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              userName ?? "User-name".tr(),
+              style: Theme.of(context)
+                  .textTheme
+                  .headlineMedium
+                  ?.copyWith(color: Colors.black, fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
@@ -33,6 +90,7 @@ class ProfileTab extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextField(
+                      controller: firstNameController,
                       decoration: InputDecoration(
                         suffixIcon: Icon(
                           Icons.abc,
@@ -51,6 +109,7 @@ class ProfileTab extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextField(
+                      controller: lastNameController,
                       decoration: InputDecoration(
                         suffixIcon: Icon(
                           Icons.abc,
@@ -70,6 +129,7 @@ class ProfileTab extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
+                controller: emailController,
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
                   labelText: 'email'.tr(),
@@ -90,6 +150,7 @@ class ProfileTab extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextField(
+                      controller: governorateController,
                       decoration: InputDecoration(
                         labelText: 'governorate'.tr(),
                         hintText: 'governorate-hint'.tr(),
@@ -108,6 +169,7 @@ class ProfileTab extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextField(
+                      controller: cityController,
                       decoration: InputDecoration(
                         hintText: 'city-hint'.tr(),
                         labelText: 'city'.tr(),
@@ -127,6 +189,7 @@ class ProfileTab extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
+                controller: universityController,
                 decoration: InputDecoration(
                   labelText: 'uname'.tr(),
                   hintText: 'hint-text'.tr(),
@@ -136,7 +199,6 @@ class ProfileTab extends StatelessWidget {
                   suffixIcon: ImageIcon(
                     AssetImage("assets/images/school.png"),
                     size: 10,
-                    color: Colors.blue,
                   ),
                 ),
               ),
@@ -144,6 +206,7 @@ class ProfileTab extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
+                controller: phoneController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                   labelText: 'phone'.tr(),
@@ -154,7 +217,6 @@ class ProfileTab extends StatelessWidget {
                   suffixIcon: Icon(
                     Icons.phone_android_rounded,
                     size: 30,
-                    color: Colors.blue,
                   ),
                 ),
               ),
@@ -166,7 +228,7 @@ class ProfileTab extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: SizedBox(
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: _saveUserData,
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.blue,
                           elevation: 5,
@@ -192,7 +254,22 @@ class ProfileTab extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: SizedBox(
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          if (user != null) {
+                            userProvider.updateUserData(
+                              firstName: firstNameController.text,
+                              lastName: lastNameController.text,
+                              governorate: governorateController.text,
+                              city: cityController.text,
+                              university: universityController.text,
+                              phone: phoneController.text,
+                            );
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                    content:
+                                        Text('Data updated successfully!')));
+                          }
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.green,
                           elevation: 5,
@@ -214,7 +291,7 @@ class ProfileTab extends StatelessWidget {
                   ),
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),

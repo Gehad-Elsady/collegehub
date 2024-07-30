@@ -43,65 +43,66 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Color(0xffFCED4DA),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // logo
-            Icon(
-              Icons.lock_open_rounded,
-              size: 100,
-              color: Theme.of(context).colorScheme.inversePrimary,
-            ),
-            SizedBox(
-              height: 25,
-            ),
-            //massege
-            Text(
-              "login-title".tr(),
-              style: TextStyle(
-                fontSize: 16,
-                color: Theme.of(context).colorScheme.inversePrimary,
-                fontWeight: FontWeight.bold,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              ImageIcon(
+                AssetImage("assets/images/login-logo.png"),
+                size: 400,
+                color: Color(0xff495057),
               ),
-            ),
-            SizedBox(
-              height: 25,
-            ),
-            //email
-            MyTextFilde(emailController, "email".tr(), false,
-                Icon(Icons.email_outlined)),
-            SizedBox(height: 15),
-            //password
-            MyTextFilde(passwordController, "password".tr(), true,
-                Icon(Icons.key_rounded)),
-            SizedBox(height: 25),
-            //sing in
-            MyButton(ontap: login, "sign-in".tr(), icon: Icons.login),
-            SizedBox(height: 8),
-            //sing up
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "not-m".tr(),
-                  style: TextStyle(
-                      color: Theme.of(context).colorScheme.inversePrimary),
-                ),
-                SizedBox(width: 10),
-                GestureDetector(
-                  onTap: widget.ontap,
-                  child: Text(
-                    "register-now".tr(),
-                    style: TextStyle(
-                        color: Theme.of(context).colorScheme.inversePrimary,
-                        fontWeight: FontWeight.bold),
+              Text(
+                textAlign: TextAlign.center,
+                "login-title".tr(),
+                style: Theme.of(context)
+                    .textTheme
+                    .headlineLarge
+                    ?.copyWith(color: Colors.black),
+              ),
+              SizedBox(
+                height: 25,
+              ),
+              //email
+              MyTextFilde(emailController, "email".tr(), false,
+                  Icon(Icons.email_outlined)),
+              SizedBox(height: 15),
+              //password
+              MyTextFilde(passwordController, "password".tr(), true,
+                  Icon(Icons.key_rounded)),
+              SizedBox(height: 25),
+              //sing in
+              MyButton(ontap: login, "sign-in".tr(), icon: Icons.login),
+              SizedBox(height: 8),
+              //sing up
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "not-m".tr(),
+                    style: Theme.of(context)
+                        .textTheme
+                        .headlineMedium
+                        ?.copyWith(color: Colors.black),
                   ),
-                ),
-              ],
-            )
-          ],
+                  SizedBox(width: 10),
+                  GestureDetector(
+                    onTap: widget.ontap,
+                    child: Text(
+                      "register-now".tr(),
+                      style: Theme.of(context)
+                          .textTheme
+                          .headlineMedium
+                          ?.copyWith(color: Colors.blue),
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );

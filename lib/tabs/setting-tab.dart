@@ -12,10 +12,10 @@ class SettingTab extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(
-            "language".tr(),
-            style: Theme.of(context).textTheme.headlineLarge,
-          ),
+          Text("language".tr(),
+              style: Theme.of(context).textTheme.headlineLarge?.copyWith(
+                    color: Colors.black,
+                  )),
           SizedBox(height: 20),
           InkWell(
             onTap: () {
@@ -33,16 +33,22 @@ class SettingTab extends StatelessWidget {
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(25),
-                border: Border.all(color: Colors.red),
+                border: Border.all(color: Colors.black),
               ),
               child: context.locale == Locale("ar")
                   ? Text(
                       "arabic".tr(),
-                      style: Theme.of(context).textTheme.headlineMedium,
+                      style:
+                          Theme.of(context).textTheme.headlineMedium?.copyWith(
+                                color: Colors.black,
+                              ),
                     )
                   : Text(
                       "english".tr(),
-                      style: Theme.of(context).textTheme.headlineMedium,
+                      style:
+                          Theme.of(context).textTheme.headlineMedium?.copyWith(
+                                color: Colors.black,
+                              ),
                     ),
             ),
           ),

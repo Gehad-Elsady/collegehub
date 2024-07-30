@@ -33,7 +33,7 @@ class CollegeModelSheet extends StatelessWidget {
                   suffixIcon: ImageIcon(
                     AssetImage("assets/images/school.png"),
                     size: 10,
-                    color: Colors.blue,
+                    color: Colors.black,
                   ),
                 ),
               ),
@@ -192,7 +192,7 @@ class CollegeModelSheet extends StatelessWidget {
                   suffixIcon: Icon(
                     Icons.phone_android_rounded,
                     size: 30,
-                    color: Colors.blue,
+                    color: Colors.black,
                   ),
                 ),
               ),
@@ -210,7 +210,7 @@ class CollegeModelSheet extends StatelessWidget {
                   suffixIcon: Icon(
                     Icons.abc_outlined,
                     size: 30,
-                    color: Colors.blue,
+                    color: Colors.black,
                   ),
                 ),
               ),

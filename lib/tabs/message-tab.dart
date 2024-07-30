@@ -11,7 +11,16 @@ class MessageTab extends StatelessWidget {
     return Container(
       child: Column(
         children: [
-          Text('message-button'.tr()),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              'message-button'.tr(),
+              style: Theme.of(context)
+                  .textTheme
+                  .headlineLarge
+                  ?.copyWith(color: Colors.black, fontSize: 35),
+            ),
+          ),
           SizedBox(height: 10),
           Expanded(
             child: ListView.builder(

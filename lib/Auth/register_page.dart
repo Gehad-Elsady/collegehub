@@ -51,27 +51,26 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Color(0xffFCED4DA),
       body: Center(
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               // logo
-              Icon(
-                Icons.lock_open_rounded,
-                size: 100,
-                color: Theme.of(context).colorScheme.inversePrimary,
+              ImageIcon(
+                AssetImage("assets/images/student.png"),
+                color: Color(0xff343A40),
+                size: 150,
               ),
               SizedBox(height: 25),
               // message
               Text(
                 "sign-up-title".tr(),
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Theme.of(context).colorScheme.inversePrimary,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: Theme.of(context)
+                    .textTheme
+                    .headlineLarge
+                    ?.copyWith(color: Colors.black, fontSize: 20),
               ),
               SizedBox(height: 25),
               // email
@@ -107,19 +106,20 @@ class _RegisterPageState extends State<RegisterPage> {
                 children: [
                   Text(
                     "have-account".tr(),
-                    style: TextStyle(
-                      color: Theme.of(context).colorScheme.inversePrimary,
-                    ),
+                    style: Theme.of(context)
+                        .textTheme
+                        .headlineMedium
+                        ?.copyWith(color: Colors.black),
                   ),
                   SizedBox(width: 10),
                   GestureDetector(
                     onTap: widget.onTap,
                     child: Text(
                       "login-now".tr(),
-                      style: TextStyle(
-                        color: Theme.of(context).colorScheme.inversePrimary,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: Theme.of(context)
+                          .textTheme
+                          .headlineMedium
+                          ?.copyWith(color: Colors.blue),
                     ),
                   ),
                 ],
